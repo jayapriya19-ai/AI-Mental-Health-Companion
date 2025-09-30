@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SereneMind Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Lexend', 'sans-serif'],
+            },
+            colors: {
+              primary: '#4A9B8E', // Soft Teal/Sage Green
+              'primary-light': '#8BC6A8',
+              secondary: '#FF9F80', // Warm Coral/Peach
+              'secondary-light': '#FFB199',
+              background: '#F9F6F1', // Off-white/Cream
+              'text-main': '#2C3E50', // Soft Charcoal
+              accent: '#A78BDD', // Lavender
+              alert: '#E8A87C', // Muted Orange
+            },
+            borderRadius: {
+              '4xl': '2rem',
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes breath-478 {
+        0% { transform: scale(0.8); background-color: #A78BDD; opacity: 0.9; } /* Inhale start */
+        21.05% { transform: scale(1.2); background-color: #8BC6A8; opacity: 1; } /* 4s: Inhale end */
+        57.89% { transform: scale(1.2); background-color: #8BC6A8; opacity: 1; } /* 7s: Hold end */
+        100% { transform: scale(0.8); background-color: #A78BDD; opacity: 0.9; } /* 8s: Exhale end */
+      }
+      .breathing-circle-active {
+        animation: breath-478 19s ease-in-out infinite;
+      }
+       /* For Recharts */
+      .recharts-cartesian-axis-tick-value {
+        font-family: 'Lexend', sans-serif;
+        font-size: 0.75rem;
+      }
+       .recharts-tooltip-wrapper {
+        outline: none !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-background">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
